@@ -12,11 +12,15 @@ on:
 
 jobs:
   docker_publish:
-    runs-on: "ubuntu-20.04"
+    runs-on: "ubuntu-latest"
 
     steps:
       - uses: actions/checkout@v2
-
+      # Fix watchers
+      - name: Fix inotify instances
+      run: |
+        echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf
+        sudo sysctl -p
       # My copy of push-to-ghcr
       - name: Build and publish a Docker image for ${{ github.repository }}
         uses: 0xmutt/push-to-ghcr@main
