@@ -7,6 +7,9 @@
     push:
       branches:
         - main
+      paths-ignore:
+        - 'README.md'
+
   jobs:
     docker_publish:
       runs-on: ubuntu-latest
