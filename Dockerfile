@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:ubuntujammy
 MAINTAINER 0xmutt
 LABEL maintainer="0xmutt"
 RUN apt-get update && apt-get install -y apt-transport-https
