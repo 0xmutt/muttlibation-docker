@@ -1,7 +1,6 @@
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:debianbookworm
 MAINTAINER 0xmutt
 LABEL maintainer="0xmutt"
-RUN apt-get update && apt-get install -y apt-transport-https
-RUN apt-get install -y wget firefox-esr
+RUN apt-get update && apt-get install -y apt-transport-https wget firefox-esr
 RUN wget https://github.com/0xmutt/MuttLibation/releases/download/v1.3/Libation.1.3-linux-chardonnay-amd64.deb
 RUN dpkg --install Libation.1.3-linux-chardonnay-amd64.deb && rm Libation.1.3-linux-chardonnay-amd64.deb
